@@ -42,3 +42,11 @@ services:
       PMA_PORT: 3306
     volumes:
       - ./:/usr/share/nginx/html/phpmyadmin
+  jenkins:
+    build:
+      context: ./docker/jenkins
+    container_name: ${APP_NAME}-jenkins
+    ports:
+      - 8083:8080
+      - 50000:50000
+    restart: always
