@@ -19,6 +19,8 @@ services:
     restart: always
     volumes:
       - ./:/usr/share/nginx/html
+    links:
+      - mysql:mysql
   mysql:
     build:
       context: ./docker/mysql
